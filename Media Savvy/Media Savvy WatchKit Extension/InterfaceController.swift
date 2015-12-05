@@ -38,5 +38,21 @@ class InterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         updateBackgroundButton()
     }
+    
+    // MARK: Background audio
+    private var musicItem: WKAudioFilePlayerItem?
+    private var backgroundPlayer: WKAudioFilePlayer?
+    
+    private func startBackgroundPlayback() {
+        
+    }
+    
+    private func stopBackgroundPlayback() {
+        
+    }
+    
+    private func prepareAudioItemAndPlayer() {
+        
+    }
 
 }
