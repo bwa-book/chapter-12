@@ -17,5 +17,12 @@ class InterfaceController: WKInterfaceController {
         
         updatePlayButtonState()
     }
+    
+    private func generateAudioUrl() {
+        let containerUrl = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.build.watchosapps")!
+        let filename = String(NSDate().timeIntervalSince1970)
+        
+        audioUrl = containerUrl.URLByAppendingPathComponent("\(filename).m4a")
+    }
 
 }
