@@ -52,15 +52,35 @@ class InterfaceController: WKInterfaceController {
     private var backgroundPlayer: WKAudioFilePlayer?
     
     private func startBackgroundPlayback() {
+        prepareAudioItemAndPlayer()
+        guard let _ = musicItem, backgroundPlayer = backgroundPlayer else { return }
         
+        backgroundPlayer.play()
     }
     
     private func stopBackgroundPlayback() {
+        guard let backgroundPlayer = backgroundPlayer else { return }
         
+        backgroundPlayer.pause()
     }
     
     private func prepareAudioItemAndPlayer() {
+        guard musicItem == nil else { return }
         
+        let bundle = NSBundle(forClass: InterfaceController.self)
+        if let audioUrl = bundle.URLForResource("music", withExtension: "mp3") {
+            let asset = WKAudioFileAsset(
+                URL: audioUrl,
+                title: "Music!",
+                albumTitle: "Build watchOS Apps",
+                artist: "Emandem"
+            )
+            
+            musicItem = WKAudioFilePlayerItem(asset: asset)
+            if let musicItem = musicItem {
+                backgroundPlayer = WKAudioFilePlayer(playerItem: musicItem)
+            }
+        }
     }
 
 }
