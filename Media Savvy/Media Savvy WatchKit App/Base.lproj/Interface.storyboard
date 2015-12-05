@@ -10,7 +10,11 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Media_Savvy_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="center" title="Play" id="MyJ-s9-EYL"/>
+                        <button width="1" alignment="center" title="Play" id="MyJ-s9-EYL">
+                            <connections>
+                                <action selector="play" destination="AgC-eL-Hgc" id="4Nh-fh-BIc"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="button" destination="MyJ-s9-EYL" id="oMq-0H-AVs"/>
