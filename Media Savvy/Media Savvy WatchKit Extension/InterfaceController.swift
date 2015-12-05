@@ -19,5 +19,10 @@ class InterfaceController: WKInterfaceController {
             }
         }
     }
+    
+    @IBOutlet var backgroundButton: WKInterfaceButton!
+    @IBAction func toggleBackgroundPlayback() {
+        
+    }
 
 }

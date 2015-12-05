@@ -15,8 +15,14 @@
                                 <action selector="play" destination="AgC-eL-Hgc" id="4Nh-fh-BIc"/>
                             </connections>
                         </button>
+                        <button width="1" alignment="center" title="Play Music" id="4iq-Ny-WRl">
+                            <connections>
+                                <action selector="toggleBackgroundPlayback" destination="AgC-eL-Hgc" id="cKD-0V-RAF"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
+                        <outlet property="backgroundButton" destination="4iq-Ny-WRl" id="7vf-LE-hdw"/>
                         <outlet property="button" destination="MyJ-s9-EYL" id="oMq-0H-AVs"/>
                     </connections>
                 </controller>
