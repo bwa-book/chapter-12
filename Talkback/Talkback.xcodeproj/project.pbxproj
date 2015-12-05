@@ -80,6 +80,8 @@
 		4D2C18871C128BD100C37D79 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		4D2C18891C128BD100C37D79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D2C188B1C128BD100C37D79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D2C18991C128C6300C37D79 /* Talkback WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Talkback WatchKit App.entitlements"; sourceTree = "<group>"; };
+		4D2C189A1C128C7C00C37D79 /* Talkback WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Talkback WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		4D2C18751C128BD100C37D79 /* Talkback WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				4D2C18991C128C6300C37D79 /* Talkback WatchKit App.entitlements */,
 				4D2C18761C128BD100C37D79 /* Interface.storyboard */,
 				4D2C18791C128BD100C37D79 /* Assets.xcassets */,
 				4D2C187B1C128BD100C37D79 /* Info.plist */,
@@ -146,6 +149,7 @@
 		4D2C18841C128BD100C37D79 /* Talkback WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4D2C189A1C128C7C00C37D79 /* Talkback WatchKit Extension.entitlements */,
 				4D2C18851C128BD100C37D79 /* InterfaceController.swift */,
 				4D2C18871C128BD100C37D79 /* ExtensionDelegate.swift */,
 				4D2C18891C128BD100C37D79 /* Assets.xcassets */,
@@ -224,9 +228,21 @@
 					};
 					4D2C18701C128BD100C37D79 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 26HRYTAS2C;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4D2C187F1C128BD100C37D79 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 26HRYTAS2C;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -426,6 +442,7 @@
 		4D2C188F1C128BD100C37D79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Talkback WatchKit Extension/Talkback WatchKit Extension.entitlements";
 				INFOPLIST_FILE = "Talkback WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = build.watchosapps.Talkback.watchkitapp.watchkitextension;
@@ -440,6 +457,7 @@
 		4D2C18901C128BD100C37D79 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Talkback WatchKit Extension/Talkback WatchKit Extension.entitlements";
 				INFOPLIST_FILE = "Talkback WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = build.watchosapps.Talkback.watchkitapp.watchkitextension;
@@ -455,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Talkback WatchKit App/Talkback WatchKit App.entitlements";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Talkback_WatchKit_Extension;
 				INFOPLIST_FILE = "Talkback WatchKit App/Info.plist";
@@ -471,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Talkback WatchKit App/Talkback WatchKit App.entitlements";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Talkback_WatchKit_Extension;
 				INFOPLIST_FILE = "Talkback WatchKit App/Info.plist";
