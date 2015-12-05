@@ -22,7 +22,15 @@ class InterfaceController: WKInterfaceController {
     
     @IBOutlet var backgroundButton: WKInterfaceButton!
     @IBAction func toggleBackgroundPlayback() {
+        isPlaying = !isPlaying
         
+        if (isPlaying) {
+            startBackgroundPlayback()
+        } else {
+            stopBackgroundPlayback()
+        }
+        
+        updateBackgroundButton()
     }
     
     var isPlaying = false
