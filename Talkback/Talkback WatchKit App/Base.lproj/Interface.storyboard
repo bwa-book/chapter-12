@@ -10,8 +10,16 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Talkback_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="center" title="Record" id="k0F-p0-Kt1"/>
-                        <button width="1" alignment="center" title="Play" id="tnG-Et-NoV"/>
+                        <button width="1" alignment="center" title="Record" id="k0F-p0-Kt1">
+                            <connections>
+                                <action selector="record" destination="AgC-eL-Hgc" id="Olw-ZP-6t2"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" title="Play" id="tnG-Et-NoV">
+                            <connections>
+                                <action selector="play" destination="AgC-eL-Hgc" id="yhe-C8-h7Y"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="playButton" destination="tnG-Et-NoV" id="Ddj-bJ-eRI"/>

@@ -24,5 +24,36 @@ class InterfaceController: WKInterfaceController {
         
         audioUrl = containerUrl.URLByAppendingPathComponent("\(filename).m4a")
     }
+    
+    @IBAction func record() {
+        generateAudioUrl()
+        
+        if let url = audioUrl {
+            presentAudioRecorderControllerWithOutputURL(
+                url,
+                preset: .NarrowBandSpeech,
+                options: nil) { didSave, error in
+                    if !didSave {
+                        self.audioUrl = nil
+                    }
+                    
+                    self.updatePlayButtonState()
+            }
+        }
+    }
+    
+    @IBAction func play() {
+        guard let url = audioUrl else { return }
+        
+        presentMediaPlayerControllerWithURL(url, options: nil) { finished, endTime, error in
+            if finished {
+                do {
+                    try NSFileManager.defaultManager().removeItemAtURL(url)
+                    self.audioUrl = nil
+                    self.updatePlayButtonState()
+                } catch {}
+            }
+        }
+    }
 
 }
