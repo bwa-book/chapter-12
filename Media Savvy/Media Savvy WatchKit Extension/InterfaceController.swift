@@ -24,5 +24,19 @@ class InterfaceController: WKInterfaceController {
     @IBAction func toggleBackgroundPlayback() {
         
     }
+    
+    var isPlaying = false
+    private func updateBackgroundButton() {
+        if (isPlaying) {
+            backgroundButton.setTitle("Stop Music")
+        } else {
+            backgroundButton.setTitle("Play Music")
+        }
+    }
+    
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
+        updateBackgroundButton()
+    }
 
 }
